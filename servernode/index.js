@@ -26,14 +26,6 @@ app.get('/automate/browser/whatsbot', async (req, res) => {
       }   
   });
 
-  // app.get('/message' , async(req, res) =>{
-  //       try {
-  //            const message = await getMessage(currentPage);
-  //       } catch (error) {
-  //         console.log('errror' , error);
-  //       }
-  // })
-
 app.listen(port, () => {
   console.log(`Server is Running on Port No ${port}`);
 })

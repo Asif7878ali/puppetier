@@ -1,63 +1,43 @@
 import './App.css';
-import { useState , useEffect } from 'react';
-
+import { useState } from 'react';
+import axios from "axios";
 
 function App() {
     const [qrcode, setQrcode] = useState('');
     const [msg, setMsg] = useState('');
     const [loaded, setLoaded] = useState(false);
-    const [socket, setSocket] = useState(null);
 
-    const initializeSocket = () => {
-      const newSocket = io('http://localhost:4000');
-      setSocket(newSocket);
-  };
-
-  useEffect(() => {
-    if (socket) {
-        socket.on('qrCodeEvent', (data) => {
-            console.log(data);
-            const {msg , qr} = data;
-            setQrcode(qr);
+    async function handleButtonClick() {
+        console.log('send http request...');
+        const url = 'http://localhost:5000/automate/browser/whatsbot';
+        setLoaded(true);
+        try {
+            const response = await axios.get(url);
+            const { msg, qrcode } = response.data;
             setMsg(msg);
-            setLoaded(true);
-        });
-
-        socket.on('ready', (ready) => {
-            console.log(ready);
-        });
-
-        return () => {
-            socket.disconnect();
-        };
+            setQrcode(qrcode);
+            setLoaded(false);
+        } catch (error) {
+            console.log('errrr', error);
+            setLoaded(false);
+        }
     }
-}, [socket]);
 
-const handleButtonClick = () => {
-  console.log('Send the WebSocket Connection...');
-  setLoaded(false);
-  if (socket) {
-      socket.disconnect();
-  }
-  initializeSocket();
-};
-
-  return (
-    <div className="App">
-         {  loaded === false  ? (
-            <button className='btn' onClick={handleButtonClick}>Get Qr Code</button>
-           ) : (
-                 <p>Loading...</p>
-          )}
-        
-       { qrcode && 
-          <div> 
-                <h1>{msg}</h1>
-                <QRCode className='qrcode' value={qrcode}/>
-          </div>
-      }
-    </div>
-  );
+    return (
+        <div className="App">
+            {loaded === false ? (
+                <button className='btn' onClick={handleButtonClick}>Get Qr Code</button>
+            ) : (
+                <p>Loading...</p>
+            )}
+            {qrcode &&
+                <div>
+                    <h1>{msg}</h1>
+                    <img src={`data:image/png;base64,${qrcode}`} alt="QR Code" />
+                </div>
+            }
+        </div>
+    );
 }
 
 export default App;
