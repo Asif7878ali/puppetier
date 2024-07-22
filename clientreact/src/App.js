@@ -1,7 +1,8 @@
 import './App.css';
 import { useState } from 'react';
 import axios from "axios";
-import Message from './componenets/Message';
+import Message from './components/Message';
+
 
 function App() {
     const [qrcode, setQrcode] = useState('');
@@ -10,7 +11,7 @@ function App() {
 
     async function handleButtonClick() {
         console.log('send http request...');
-        const url = 'http://103.175.163.98:4000/automate/browser/whatsbot';
+        const url = 'http://localhost:4000/automate/browser/whatsbot';
         setLoaded(true);
         try {
             const response = await axios.get(url);
@@ -38,7 +39,7 @@ function App() {
                     <img src={`data:image/png;base64,${qrcode}`} alt="QR Code" />
                 </div>
             }
-            <Message/>
+           <Message/>
         </div>
     );
 }
