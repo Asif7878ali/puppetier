@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 // route api path
 const automateBrowser = require('./routes/whatsappBrowser.js');
 const getMessage = require('./routes/whatsMessage.js');
+const checkmessage = require('./middleware/checkmessage.js');
 
 
 const port = process.env.PORT || 4000
@@ -32,7 +33,7 @@ app.get('/automate/browser/whatsbot', async (req, res) => {
       }   
   });
 
-  app.post('/automate/message', async (req, res) => {
+  app.post('/automate/message',checkmessage ,async (req, res) => {
     console.log('client data',req.body);
     const { number, message } = req.body;
     try {
