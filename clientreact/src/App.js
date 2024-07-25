@@ -1,16 +1,19 @@
-import './App.css';
-import react from 'react';
-import Message from './components/Message';
-
+import React, { useState } from 'react';
+import Message from './componenets/Message';
+import Qrcode from './componenets/Qrcode';
 
 function App() {
-   
+    const [qrScanned, setQrScanned] = useState(false);
+
+    function handleQRCodeScanned() {
+        setQrScanned(true); // Update state to indicate QR code is scanned
+    }
  
     return (
-        <div>
-           
-           <Message/>
-        </div>
+        <>
+             {!qrScanned && <Qrcode QRCodeScanned={handleQRCodeScanned} />}
+             {qrScanned && <Message />}
+        </>
     );
 }
 

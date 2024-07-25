@@ -1,31 +1,44 @@
+import React from 'react'
+import '../App.css';
 import { useState } from 'react';
 import axios from "axios";
+import { notification } from 'antd';
 
-const Qrcode = () => {
-
+const Qrcode = ({ QRCodeScanned }) => {
+    
     const [qrcode, setQrcode] = useState('');
-    const [msg, setMsg] = useState('');
     const [loaded, setLoaded] = useState(false);
 
     async function handleButtonClick() {
         console.log('send http request...');
-        const url = 'http://localhost:4000/automate/browser/whatsbot';
-        setLoaded(true);
+        const url = 'http://103.175.163.98:4000/automate/qrcode';
         try {
+            setLoaded(true);
             const response = await axios.get(url);
             console.log(response.data);
             const { msg, qrcode } = response.data;
-            setMsg(msg);
             setQrcode(qrcode);
             setLoaded(false);
+            notification.success({
+                message : msg
+              })
         } catch (error) {
             console.log('errrr', error);
+            const {msg} = error.response.data;
             setLoaded(false);
+            notification.error({
+                message : msg
+              })
         }
     }
+
+    function Scanned() {
+        QRCodeScanned(); // Notify parent component that QR code is scanned
+    }
+
   return (
     <>
-      <div className="App">
+         <div className="App">
             {loaded === false ? (
                 <button className='btn' onClick={handleButtonClick}>Get Qr Code</button>
             ) : (
@@ -33,8 +46,8 @@ const Qrcode = () => {
             )}
             {qrcode &&
                 <div>
-                    <h1>{msg}</h1>
                     <img src={`data:image/png;base64,${qrcode}`} alt="QR Code" />
+                    <button onClick={Scanned}>Scanned</button>
                 </div>
             }
         </div>
