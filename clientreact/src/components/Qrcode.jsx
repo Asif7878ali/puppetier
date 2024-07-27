@@ -11,10 +11,13 @@ const Qrcode = ({ QRCodeScanned }) => {
 
     async function handleButtonClick() {
         console.log('send http request...');
-        const url = 'http://103.175.163.98:4000/automate/qrcode';
+        const url = 'http://103.175.163.98:4000/api/qrcode';
+        const apitoken = 'apiyvj44343lbp65jur87key'; 
         try {
             setLoaded(true);
-            const response = await axios.get(url);
+            const response = await axios.get(url,{
+                headers : { 'api-key': apitoken } 
+            });
             console.log(response.data);
             const { msg, qrcode } = response.data;
             setQrcode(qrcode);

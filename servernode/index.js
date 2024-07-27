@@ -8,6 +8,7 @@ const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 const automateBrowser = require('./controlller/whatsappBrowser.js');
 const getMessage = require('./controlller/whatsmessage.js');
 const checknumber = require('./middleware/checknumber.js');
+const validateApiKey = require('./middleware/validateapikey.js');
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -21,8 +22,9 @@ app.use(bodyParser.json());
 app.get('/', async (req, res) => {
   res.send('All is Working');
 });
+app.use('/api', validateApiKey)
 // Route to generate WhatsApp Web QR code
-app.get('/automate/qrcode', async (req, res) => {
+app.get('/api/qrcode', async (req, res) => {
   try {
     const { page, base64Screenshot } = await automateBrowser();
     currentPage = page;
@@ -34,7 +36,7 @@ app.get('/automate/qrcode', async (req, res) => {
   }
 });
 // Route to send a message via WhatsApp Web
-app.post('/automate/message', async (req, res) => {
+app.post('/api/send_sms', async (req, res) => {
   const { number, message } = req.body;
   try {
     if (!currentPage) {

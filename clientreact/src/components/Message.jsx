@@ -35,7 +35,10 @@ const Message = () => {
           console.log(formData);
       try {
           const url = 'http://103.175.163.98:4000/automate/message';
-          const response = await axios.post(url, formData);
+          const apitoken = 'apiyvj44343lbp65jur87key'; 
+          const response = await axios.post(url, formData,{
+            headers : { 'api-key': apitoken } 
+          });
           console.log(response.data);
           const {msg} = response.data;
           setFormData({ number: '', message: '' });
