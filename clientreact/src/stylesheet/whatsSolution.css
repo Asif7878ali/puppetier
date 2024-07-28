@@ -1,0 +1,52 @@
+.solutions {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .solutions .content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .solutions h2 {
+    color: #16329c;
+    font-size: 2em;
+    margin-bottom: 40px;
+  }
+  
+  .solutions .icons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .solutions .icon-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .solutions .icon-card .icon {
+    font-size: 2.5em;
+    color: #16329c;
+    margin-bottom: 10px;
+  }
+  
+  .solutions .icon-card p {
+    color: #333;
+    font-size: 1.2em;
+  }
+  
+  @media (max-width: 768px) {
+    .solutions .icons {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .solutions .icon-card {
+      margin: 20px 0;
+    }
+  }
+  
