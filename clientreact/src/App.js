@@ -3,6 +3,7 @@ import { Outlet } from "react-router";
 import Message from './components/Message.jsx';
 import Qrcode from './components/Qrcode.jsx';
 import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
 
 function App() {
     // const [qrScanned, setQrScanned] = useState(false);
@@ -15,6 +16,7 @@ function App() {
         <>
            <Navbar/>
            <Outlet/>
+           <Footer/>
              {/* {!qrScanned && <Qrcode QRCodeScanned={handleQRCodeScanned} />}
              {qrScanned && <Message />} */}
         </>
