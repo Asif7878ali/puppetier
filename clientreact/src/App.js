@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Message from './componenets/Message';
-import Qrcode from './componenets/Qrcode';
+import Message from './components/Message.jsx';
+import Qrcode from './components/Qrcode.jsx';
 
 function App() {
     const [qrScanned, setQrScanned] = useState(false);

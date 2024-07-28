@@ -11,7 +11,7 @@ const Qrcode = ({ QRCodeScanned }) => {
 
     async function handleButtonClick() {
         console.log('send http request...');
-        const url = 'http://103.175.163.98:4000/api/qrcode';
+        const url = 'http://localhost:4000/api/qrcode';
         const apitoken = 'apiyvj44343lbp65jur87key'; 
         try {
             setLoaded(true);

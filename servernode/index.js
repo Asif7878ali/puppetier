@@ -5,9 +5,9 @@ const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 
 // Import your missing functions
-const automateBrowser = require('./controlller/whatsappBrowser.js');
-const getMessage = require('./controlller/whatsmessage.js');
-const checknumber = require('./middleware/checknumber.js');
+const automateBrowser = require('./controller/whatsappBrowser.js');
+const getMessage = require('./controller/whatsMessage.js');
+const checknumber = require('./middleware/checkmessage.js');
 const validateApiKey = require('./middleware/validateapikey.js');
 
 const app = express();
@@ -18,10 +18,6 @@ puppeteer.use(StealthPlugin());
 
 app.use(cors({ origin: '*' }));
 app.use(bodyParser.json());
-// Health check endpoint
-app.get('/', async (req, res) => {
-  res.send('All is Working');
-});
 app.use('/api', validateApiKey)
 // Route to generate WhatsApp Web QR code
 app.get('/api/qrcode', async (req, res) => {
@@ -59,5 +55,5 @@ app.post('/api/send_sms', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(Server is Running on Port No ${port});
+  console.log(`Server is Running on Port No ${port}`);
 });
