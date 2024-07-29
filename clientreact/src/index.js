@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signin from './pages/Signin';
 import Contact from './pages/Contact';
+import Sidebar from './pages/Sidebar';
 
 
 const appRouting = createBrowserRouter([
@@ -28,6 +29,10 @@ const appRouting = createBrowserRouter([
         {
           path: '/contact',
           element: <Contact/>
+        },
+        {
+          path: '/user/dashboard',
+          element: <Sidebar/>
         },
       ]
     }
