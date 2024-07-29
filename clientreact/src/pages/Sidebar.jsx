@@ -1,6 +1,6 @@
 import React from "react";
 import "../stylesheet/sidebar.css";
-import Dashboard from "../components/Dashboard";
+
 
 const Sidebar = () => {
   return (
@@ -45,7 +45,6 @@ const Sidebar = () => {
           <button>Try Demo</button>
         </div>
       </div>
-      <Dashboard/>
     </>
   );
 };

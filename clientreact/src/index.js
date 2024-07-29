@@ -6,7 +6,8 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signin from './pages/Signin';
 import Contact from './pages/Contact';
-import Sidebar from './pages/Sidebar';
+import Dashboard from './components/Dashboard';
+import ManageWhatsapp from './components/ManageWhatsapp';
 
 
 const appRouting = createBrowserRouter([
@@ -32,7 +33,11 @@ const appRouting = createBrowserRouter([
         },
         {
           path: '/user/dashboard',
-          element: <Sidebar/>
+          element: <Dashboard/>
+        },
+        {
+          path: '/user/device_settings',
+          element: <ManageWhatsapp/>
         },
       ]
     }
