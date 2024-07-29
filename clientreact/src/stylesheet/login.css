@@ -1,0 +1,121 @@
+.register-container {
+    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto; /* Adjust based on your existing layout */
+  }
+  
+  .form-container {
+    padding: 40px;
+    flex: 1;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .header .logo {
+    width: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .form-container h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .form-container p {
+    margin-bottom: 20px;
+    color: #666;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .captcha-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .captcha {
+    background-color: #eee;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .refresh-captcha {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  
+  .register-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #2851e6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .register-btn:hover {
+    background-color: #07348d;
+  }
+  
+  .sign-in {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .sign-in a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .illustration {
+    background-color: #f6f8fa;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .illustration img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .illustration p {
+    margin-top: 20px;
+    color: #333;
+    font-size: 16px;
+  }
+  

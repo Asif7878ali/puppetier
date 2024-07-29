@@ -50,20 +50,31 @@ p {
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
-  color: white;
 }
 
 .btn-try {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+.btn-try:hover {
   background-color: #16329c;
+  color: white;
 }
 
 .btn-contact {
-  background-color: #555;
+  background-color: #16329c;
+  color: white;
+  cursor: pointer;
 }
 
 .login-text span {
   color: #16329c;
-  text-decoration: none;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .image img {
