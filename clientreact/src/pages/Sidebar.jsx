@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import "../stylesheet/sidebar.css";
 
 
@@ -10,10 +11,10 @@ const Sidebar = () => {
           <h3>MENU</h3>
           <ul>
             <li>
-              <a href="/">Dashboard</a>
+            <Link to="/user/dashboard">Dashboard</Link>
             </li>
             <li>
-              <a href="/">Manage WhatsApp</a>
+            <Link to="/user/device_settings">Manage WhatsApp</Link>
             </li>
             <li>
               <a href="/">Quick Msg</a>

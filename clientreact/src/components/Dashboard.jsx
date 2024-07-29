@@ -1,9 +1,12 @@
 import React from "react";
 import "../stylesheet/dasboard.css";
+import Sidebar from "../pages/Sidebar";
 
 const Dashboard = () => {
   return (
     <>
+      <div >
+      <Sidebar/>
       <div className="main-content">
         <h1>Welcome, Asif</h1>
         <div className="features">
@@ -12,6 +15,8 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      </div>
+     
     </>
   );
 };

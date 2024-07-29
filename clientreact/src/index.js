@@ -15,30 +15,12 @@ const appRouting = createBrowserRouter([
       path: '/',
       element: <App />,
       children: [
-        {
-          path: '/',
-          element: <Home/>
-        },
-        {
-          path: '/login',
-          element: <Login/>
-        },
-        {
-          path: '/signin',
-          element: <Signin/>
-        },
-        {
-          path: '/contact',
-          element: <Contact/>
-        },
-        {
-          path: '/user/dashboard',
-          element: <Dashboard/>
-        },
-        {
-          path: '/user/device_settings',
-          element: <ManageWhatsapp/>
-        },
+        { path: '/', element: <Home/> },
+        { path: '/login', element: <Login/> },
+        { path: '/signin', element: <Signin/> },
+        { path: '/contact', element: <Contact/> },
+        { path: '/user/dashboard', element: <Dashboard/> },
+        { path: '/user/device_settings', element: <ManageWhatsapp/> },
       ]
     }
   ])
