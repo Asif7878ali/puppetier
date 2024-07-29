@@ -2,32 +2,32 @@
     background-color: #f8f8f8;
     padding: 50px 20px;
     text-align: center;
-  }
+}
   
-  .software-service .content {
+.software-service .content {
     max-width: 1200px;
     margin: 0 auto;
-  }
+}
   
-  .software-service h2 {
+.software-service h2 {
     color: #16329c;
     font-size: 2.5em;
     margin-bottom: 20px;
-  }
+}
   
-  .software-service p {
+.software-service p {
     color: #333;
     font-size: 1.2em;
     margin-bottom: 50px;
-  }
+}
   
-  .software-service .cards {
+.software-service .cards {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-  }
+}
   
-  .software-service .card {
+.software-service .card {
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -35,39 +35,39 @@
     max-width: 45%;
     margin: 20px 0;
     text-align: left;
-  }
+}
   
-  .software-service .card .icon {
+.software-service .card .icon {
     text-align: center;
     margin-bottom: 20px;
-  }
+}
   
-  .software-service .card h3 {
+.software-service .card h3 {
     color: #16329c;
     font-size: 1.5em;
     margin-bottom: 10px;
-  }
+}
   
-  .software-service .card p {
+.software-service .card p {
     color: #555;
     font-size: 1em;
     line-height: 1.5;
-  }
+}
   
-  .software-service .card a {
+.software-service .card a {
     color: #16329c;
     text-decoration: none;
     font-weight: bold;
-  }
+}
   
-  @media (max-width: 768px) {
-    .software-service .cards {
+@media (max-width: 768px) {
+  .software-service .cards {
       flex-direction: column;
       align-items: center;
-    }
-  
-    .software-service .card {
-      max-width: 80%;
-    }
   }
+  
+  .software-service .card {
+      max-width: 80%;
+  }
+}
   

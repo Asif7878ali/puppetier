@@ -4,9 +4,11 @@ import "../stylesheet/contact.css"
 const Contact = () => {
   return (
     <>
-      <div className="contact-form">
+      <div>
+        <div className="headingcontact">
         <h1>Contact our team of Whatsbot experts</h1>
-        <form>
+        </div>  
+        <form className="contact-form">
           <div>
             <label htmlFor="name">Name:</label>
             <input
@@ -49,20 +51,6 @@ const Contact = () => {
               // onBlur={formik.handleBlur}
               // value={formik.values.message}
             />
-          </div>
-          <div>
-            <label htmlFor="captcha">Captcha:</label>
-            <input
-              id="captcha"
-              name="captcha"
-              type="text"
-              // onChange={formik.handleChange}
-              // onBlur={formik.handleBlur}
-              // value={formik.values.captcha}
-            />
-          </div>
-          <div className="captcha-image">
-            <img src="path_to_captcha_image" alt="captcha" />
           </div>
           <button type="submit">Send message</button>
         </form>

@@ -7,72 +7,72 @@
     width: 100%;
     max-width: 1200px;
     margin: 40px auto; /* Adjust based on your existing layout */
-  }
+}
   
-  .form-container {
+.form-container {
     padding: 40px;
     flex: 1;
-  }
+}
   
-  .header {
+.header {
     text-align: center;
     margin-bottom: 20px;
-  }
+}
   
-  .header .logo {
+.header .logo {
     width: 50px;
     margin-bottom: 10px;
-  }
+}
   
-  .form-container h1 {
+.form-container h1 {
     margin-bottom: 10px;
     font-size: 24px;
     color: #333;
-  }
+}
   
-  .form-container p {
+.form-container p {
     margin-bottom: 20px;
     color: #666;
-  }
+}
   
-  form label {
+form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-  }
+}
   
-  form input {
+form input {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
+}
   
-  .captcha-container {
+.captcha-container {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-  }
+}
   
-  .captcha {
+.captcha {
     background-color: #eee;
     padding: 10px;
     margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
+}
   
-  .refresh-captcha {
+.refresh-captcha {
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 10px;
     cursor: pointer;
-  }
+}
   
   
-  .register-btn {
+.register-btn {
     width: 100%;
     padding: 10px;
     background-color: #2851e6;
@@ -81,23 +81,23 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-  }
+}
   
-  .register-btn:hover {
+.register-btn:hover {
     background-color: #07348d;
-  }
+}
   
-  .sign-in {
+.sign-in {
     text-align: center;
     margin-top: 20px;
-  }
+}
   
-  .sign-in a {
+.sign-in a {
     color: #007bff;
     text-decoration: none;
-  }
+}
   
-  .illustration {
+.illustration {
     background-color: #f6f8fa;
     flex: 1;
     display: flex;
@@ -106,16 +106,15 @@
     justify-content: center;
     padding: 40px;
     text-align: center;
-  }
+}
   
-  .illustration img {
+.illustration img {
     max-width: 100%;
     height: auto;
-  }
+}
   
-  .illustration p {
+.illustration p {
     margin-top: 20px;
     color: #333;
     font-size: 16px;
-  }
-  
+}  
