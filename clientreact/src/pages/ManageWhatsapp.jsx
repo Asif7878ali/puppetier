@@ -2,11 +2,13 @@ import { useState } from "react";
 import axios from "axios";
 import { notification } from "antd";
 import "../stylesheet/manageWhatsapp.css";
+import Message from "../components/Message.jsx"
 import Sidebar from "../components/Sidebar";
 
-const ManageWhatsapp = ({ QRCodeScanned }) => {
+const ManageWhatsapp = () => {
   const [qrcode, setQrcode] = useState("");
   const [loaded, setLoaded] = useState(false);
+  const [scanned, setScanned] = useState(false); // State to track if QR code is scanned
 
   async function handleButtonClick() {
     console.log("send http request...");
@@ -35,8 +37,8 @@ const ManageWhatsapp = ({ QRCodeScanned }) => {
   }
 
   function Scanned() {
-    QRCodeScanned(); // Notify parent component that QR code is scanned
-}
+    setScanned(true); // Set scanned to true when QR code is scanned
+  }
 
   return (
     <>
@@ -56,17 +58,25 @@ const ManageWhatsapp = ({ QRCodeScanned }) => {
               WhatsApp.
             </p>
 
-            {loaded === false ? (
-              <button className="qr-button" onClick={handleButtonClick}>
-                Get Qr-Code
-              </button>
+            {!scanned ? (
+              <>
+                {loaded === false ? (
+                  <button className="qr-button" onClick={handleButtonClick}>
+                    Get QR-Code
+                  </button>
+                ) : (
+                  <p>Loading...</p>
+                )}
+                {qrcode && (
+                  <div>
+                    <img src={`data:image/png;base64,${qrcode}`} alt="QR Code" />
+                    <button onClick={Scanned}>Scanned</button>
+                  </div>
+                )}
+              </>
             ) : (
-              <p>Loading...</p>
-            )}
-            {qrcode && (
               <div>
-                <img src={`data:image/png;base64,${qrcode}`} alt="QR Code" />
-                <button onClick={Scanned}>Scanned</button>
+                <Message/>
               </div>
             )}
           </div>
