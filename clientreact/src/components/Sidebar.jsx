@@ -18,47 +18,54 @@ const Sidebar = () => {
     <>
       <div className="sidebar">
         <div className="menu">
-          <h3>MENU</h3>
+          <h6>MENU</h6>
           <ul>
             <li>
-            <LuLayoutDashboard/>
+            <LuLayoutDashboard className="icon"/>
             <Link to="/user/dashboard">Dashboard</Link>
             </li>
             <li>
-            <FaWhatsapp/>
+            <FaWhatsapp className="icon"/>
             <Link to="/user/device_settings">Manage WhatsApp</Link>
             </li>
             <li>
-              <MdOutlineMessage/>
+              <MdOutlineMessage className="icon"/>
+              <Link to='/user'>Quick Msg</Link>
               <a href="/">Quick Msg</a>
             </li>
             <li>
-              <CiLocationArrow1/>
-              <a href="/">Auto Reply</a>
+              <CiLocationArrow1 className="icon"/>
+              <Link to='/user'>Auto Reply</Link>
+              
             </li>
             <li>
-              <FaCloudDownloadAlt/>
-              <a href="/">Incoming Msg</a>
+              <FaCloudDownloadAlt className="icon"/>
+              <Link to='/user'>Incoming Msg</Link>
+             
             </li>
             <li>
-              <FaCloudArrowUp/>
-              <a href="/">Outgoing Msg</a>
+              <FaCloudArrowUp className="icon"/>
+              <Link to='/user'>Outgoing Msg</Link>
+             
             </li>
             <li>
-              <BiPurchaseTagAlt/>
-              <a href="/">Buy Plan</a>
+              <BiPurchaseTagAlt className="icon"/>
+              <Link to='/user'>Buy Plan</Link>
+              
             </li>
             <li>
-              <MdPayment/>
-              <a href="/">Payment History</a>
+              <MdPayment className="icon"/>
+              <Link to='/user'>Payment History</Link>
+             
             </li>
             <li>
-              <PiWebhooksLogoBold/>
-              <a href="/">Webhooks & API</a>
+              <PiWebhooksLogoBold className="icon"/>
+              <Link to='/user'>Webhooks & API</Link>
+             
             </li>
             <li>
-              <VscAccount/>
-              <a href="/">Account Setting</a>
+              <VscAccount className="icon"/>
+              <Link to='/user'>Account Setting</Link>
             </li>
           </ul>
         </div>

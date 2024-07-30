@@ -1,5 +1,7 @@
 .maincss{
     display: flex;
+    justify-content: center;
+    padding: 3rem 5rem 2rem 10rem;
 }
 .main-content {
     flex: 1;
