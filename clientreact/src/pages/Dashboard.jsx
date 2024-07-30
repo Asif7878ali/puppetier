@@ -1,12 +1,13 @@
 import React from "react";
 import "../stylesheet/dasboard.css";
-import Sidebar from "../pages/Sidebar";
+import Sidebar from "../components/Sidebar";
+
 
 const Dashboard = () => {
   return (
     <>
-      <div >
-      <Sidebar/>
+      <div className="maincss">
+        <Sidebar/>
       <div className="main-content">
         <h1>Welcome, Asif</h1>
         <div className="features">

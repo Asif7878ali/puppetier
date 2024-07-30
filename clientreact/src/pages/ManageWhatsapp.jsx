@@ -1,10 +1,13 @@
 import React from "react";
 import "../stylesheet/manageWhatsapp.css";
+import Sidebar from "../components/Sidebar";
 
 const ManageWhatsapp = () => {
   return (
     <>
-      <div className="whatsapp-setting">
+      <div className="maincss">
+        <Sidebar/>
+        <div className="whatsapp-setting">
         <div className="header">
           <h2>WhatsApp Setting</h2>
           <p>Here is a list of package/product that you have subscribed.</p>
@@ -38,6 +41,8 @@ const ManageWhatsapp = () => {
           </div>
         </div>
       </div>
+      </div>
+
     </>
   );
 };
