@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+
 import { Outlet } from "react-router";
-import Message from './components/Message.jsx';
-import Qrcode from './components/Qrcode.jsx';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 

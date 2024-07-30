@@ -1,30 +1,77 @@
-import React from "react";
+import { useState } from "react";
+import axios from "axios";
+import { notification } from "antd";
 import "../stylesheet/manageWhatsapp.css";
 import Sidebar from "../components/Sidebar";
 
-const ManageWhatsapp = () => {
+const ManageWhatsapp = ({ QRCodeScanned }) => {
+  const [qrcode, setQrcode] = useState("");
+  const [loaded, setLoaded] = useState(false);
+
+  async function handleButtonClick() {
+    console.log("send http request...");
+    const url = "http://localhost:4000/api/qrcode";
+    const apitoken = "apiyvj44343lbp65jur87key";
+    try {
+      setLoaded(true);
+      const response = await axios.get(url, {
+        headers: { "api-key": apitoken },
+      });
+      console.log(response.data);
+      const { msg, qrcode } = response.data;
+      setQrcode(qrcode);
+      setLoaded(false);
+      notification.success({
+        message: msg,
+      });
+    } catch (error) {
+      console.log("errrr", error);
+      const { msg } = error.response.data;
+      setLoaded(false);
+      notification.error({
+        message: msg,
+      });
+    }
+  }
+
+  function Scanned() {
+    QRCodeScanned(); // Notify parent component that QR code is scanned
+}
+
   return (
     <>
       <div className="maincss">
-        <Sidebar/>
+        <Sidebar />
         <div className="whatsapp-setting">
-        <div className="content">
-          <img
-            src="https://whatsbot.tech/images/svg/hiking__flatline.svg"
-            alt="No WhatsApp Login Found"
-            className="no-login-image"
-          />
-          <p>
-            No WhatsApp Login Found,
-            <br />
-            Please Login Your WhatsApp Beta Account or Download the Latest
-            WhatsApp.
-          </p>
-          <button className="qr-button">Get QR-Code</button>
+          <div className="content">
+            <img
+              src="https://whatsbot.tech/images/svg/hiking__flatline.svg"
+              alt="No WhatsApp Login Found"
+              className="no-login-image"
+            />
+            <p>
+              No WhatsApp Login Found,
+              <br />
+              Please Login Your WhatsApp Beta Account or Download the Latest
+              WhatsApp.
+            </p>
+
+            {loaded === false ? (
+              <button className="qr-button" onClick={handleButtonClick}>
+                Get Qr-Code
+              </button>
+            ) : (
+              <p>Loading...</p>
+            )}
+            {qrcode && (
+              <div>
+                <img src={`data:image/png;base64,${qrcode}`} alt="QR Code" />
+                <button onClick={Scanned}>Scanned</button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-      </div>
-
     </>
   );
 };
