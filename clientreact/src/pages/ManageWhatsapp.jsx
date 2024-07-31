@@ -48,9 +48,7 @@ const ManageWhatsapp = () => {
           <div className="content">
             <img
               src="https://whatsbot.tech/images/svg/hiking__flatline.svg"
-              alt="No WhatsApp Login Found"
-              className="no-login-image"
-            />
+              alt="No WhatsApp Login Found" className="no-login-image"/>
             <p>
               No WhatsApp Login Found,
               <br />
